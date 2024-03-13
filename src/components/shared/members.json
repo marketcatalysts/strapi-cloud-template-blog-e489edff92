@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_members",
+  "info": {
+    "displayName": "Members",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Position": {
+      "type": "string"
+    },
+    "Bio": {
+      "type": "blocks"
+    },
+    "Photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "SocialLinks": {
+      "type": "string"
+    }
+  }
+}
