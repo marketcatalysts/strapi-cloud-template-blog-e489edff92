@@ -4,7 +4,8 @@
   "info": {
     "singularName": "data-disclaimer",
     "pluralName": "data-disclaimers",
-    "displayName": "Data Disclaimer"
+    "displayName": "Data Disclaimer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,8 +15,8 @@
     "Title": {
       "type": "string"
     },
-    "Content": {
-      "type": "blocks"
+    "Content2": {
+      "type": "richtext"
     }
   }
 }

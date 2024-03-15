@@ -1216,6 +1216,7 @@ export interface ApiContactUsContactUs extends Schema.SingleType {
     singularName: 'contact-us';
     pluralName: 'contact-uses';
     displayName: 'Contact Us';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1225,6 +1226,7 @@ export interface ApiContactUsContactUs extends Schema.SingleType {
     Content: Attribute.Blocks;
     EmailAddress: Attribute.String;
     Address: Attribute.Blocks;
+    Content2: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1252,13 +1254,14 @@ export interface ApiDataDisclaimerDataDisclaimer extends Schema.SingleType {
     singularName: 'data-disclaimer';
     pluralName: 'data-disclaimers';
     displayName: 'Data Disclaimer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Title: Attribute.String;
-    Content: Attribute.Blocks;
+    Content2: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1363,13 +1366,14 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
     singularName: 'privacy-policy';
     pluralName: 'privacy-policies';
     displayName: 'Privacy Policy';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Title: Attribute.String;
-    Content: Attribute.Blocks;
+    Content2: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1397,6 +1401,7 @@ export interface ApiTeamTeam extends Schema.SingleType {
     singularName: 'team';
     pluralName: 'teams';
     displayName: 'Team';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1423,13 +1428,14 @@ export interface ApiTermsOfUseTermsOfUse extends Schema.SingleType {
     singularName: 'terms-of-use';
     pluralName: 'terms-of-uses';
     displayName: 'Terms of Use';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Title: Attribute.String;
-    Content: Attribute.Blocks;
+    Content2: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

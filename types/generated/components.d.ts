@@ -16,6 +16,7 @@ export interface SharedMembers extends Schema.Component {
   info: {
     displayName: 'Members';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     Name: Attribute.String;
@@ -23,6 +24,7 @@ export interface SharedMembers extends Schema.Component {
     Bio: Attribute.Blocks;
     Photo: Attribute.Media;
     SocialLinks: Attribute.String;
+    Content2: Attribute.RichText;
   };
 }
 

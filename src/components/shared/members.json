@@ -2,7 +2,8 @@
   "collectionName": "components_shared_members",
   "info": {
     "displayName": "Members",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -16,17 +17,21 @@
       "type": "blocks"
     },
     "Photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "SocialLinks": {
       "type": "string"
+    },
+    "Content2": {
+      "type": "richtext"
     }
   }
 }

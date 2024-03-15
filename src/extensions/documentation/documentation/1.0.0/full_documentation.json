@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-03-14T00:34:30.482Z"
+    "x-generation-date": "2024-03-15T20:37:58.766Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6403,6 +6403,9 @@
                 "type": "string"
               },
               "Address": {},
+              "Content2": {
+                "type": "string"
+              },
               "sitemap_exclude": {
                 "type": "boolean"
               }
@@ -6467,6 +6470,9 @@
             "type": "string"
           },
           "Address": {},
+          "Content2": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -6804,7 +6810,9 @@
               "Title": {
                 "type": "string"
               },
-              "Content": {},
+              "Content2": {
+                "type": "string"
+              },
               "sitemap_exclude": {
                 "type": "boolean"
               }
@@ -6864,7 +6872,9 @@
           "Title": {
             "type": "string"
           },
-          "Content": {},
+          "Content2": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -9695,7 +9705,9 @@
               "Title": {
                 "type": "string"
               },
-              "Content": {},
+              "Content2": {
+                "type": "string"
+              },
               "sitemap_exclude": {
                 "type": "boolean"
               }
@@ -9755,7 +9767,9 @@
           "Title": {
             "type": "string"
           },
-          "Content": {},
+          "Content2": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -10880,6 +10894,9 @@
           },
           "SocialLinks": {
             "type": "string"
+          },
+          "Content2": {
+            "type": "string"
           }
         }
       },
@@ -10895,7 +10912,9 @@
               "Title": {
                 "type": "string"
               },
-              "Content": {},
+              "Content2": {
+                "type": "string"
+              },
               "sitemap_exclude": {
                 "type": "boolean"
               }
@@ -10955,7 +10974,9 @@
           "Title": {
             "type": "string"
           },
-          "Content": {},
+          "Content2": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
