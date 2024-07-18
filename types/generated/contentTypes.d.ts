@@ -885,127 +885,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface PluginCommentsComment extends Schema.CollectionType {
-  collectionName: 'comments_comment';
-  info: {
-    tableName: 'plugin-comments-comments';
-    singularName: 'comment';
-    pluralName: 'comments';
-    displayName: 'Comment';
-    description: 'Comment content type';
-    kind: 'collectionType';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    content: Attribute.Text & Attribute.Required;
-    blocked: Attribute.Boolean & Attribute.DefaultTo<false>;
-    blockedThread: Attribute.Boolean & Attribute.DefaultTo<false>;
-    blockReason: Attribute.String;
-    authorUser: Attribute.Relation<
-      'plugin::comments.comment',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
-    authorId: Attribute.String;
-    authorName: Attribute.String;
-    authorEmail: Attribute.Email;
-    authorAvatar: Attribute.String;
-    isAdminComment: Attribute.Boolean;
-    removed: Attribute.Boolean;
-    approvalStatus: Attribute.String;
-    related: Attribute.String;
-    reports: Attribute.Relation<
-      'plugin::comments.comment',
-      'oneToMany',
-      'plugin::comments.comment-report'
-    >;
-    threadOf: Attribute.Relation<
-      'plugin::comments.comment',
-      'oneToOne',
-      'plugin::comments.comment'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::comments.comment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::comments.comment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
-  };
-}
-
-export interface PluginCommentsCommentReport extends Schema.CollectionType {
-  collectionName: 'comments_comment-report';
-  info: {
-    tableName: 'plugin-comments-reports';
-    singularName: 'comment-report';
-    pluralName: 'comment-reports';
-    displayName: 'Reports';
-    description: 'Reports content type';
-    kind: 'collectionType';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    content: Attribute.Text;
-    reason: Attribute.Enumeration<['BAD_LANGUAGE', 'DISCRIMINATION', 'OTHER']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'OTHER'>;
-    resolved: Attribute.Boolean & Attribute.DefaultTo<false>;
-    related: Attribute.Relation<
-      'plugin::comments.comment-report',
-      'manyToOne',
-      'plugin::comments.comment'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::comments.comment-report',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::comments.comment-report',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
-  };
-}
-
 export interface PluginSitemapSitemap extends Schema.CollectionType {
   collectionName: 'sitemap';
   info: {
@@ -1139,7 +1018,7 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
   attributes: {
     Title: Attribute.String;
-    MainImage: Attribute.Media;
+    MainImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Content: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1180,7 +1059,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         maxLength: 80;
       }>;
     slug: Attribute.UID<'api::article.article', 'title'>;
-    cover: Attribute.Media;
+    cover: Attribute.Media<'images' | 'files' | 'videos'>;
     author: Attribute.Relation<
       'api::article.article',
       'manyToOne',
@@ -1228,7 +1107,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    avatar: Attribute.Media;
+    avatar: Attribute.Media<'images' | 'files' | 'videos'>;
     email: Attribute.String;
     articles: Attribute.Relation<
       'api::author.author',
@@ -1381,7 +1260,7 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
   attributes: {
     siteName: Attribute.String & Attribute.Required;
-    favicon: Attribute.Media;
+    favicon: Attribute.Media<'images' | 'files' | 'videos'>;
     siteDescription: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1415,7 +1294,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
   attributes: {
     Title: Attribute.String;
-    HeroImage: Attribute.Media;
+    HeroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     HeroText: Attribute.RichText;
     FeatureContent: Attribute.Relation<
       'api::home-page.home-page',
@@ -1562,8 +1441,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::comments.comment': PluginCommentsComment;
-      'plugin::comments.comment-report': PluginCommentsCommentReport;
       'plugin::sitemap.sitemap': PluginSitemapSitemap;
       'plugin::sitemap.sitemap-cache': PluginSitemapSitemapCache;
       'api::about.about': ApiAboutAbout;
