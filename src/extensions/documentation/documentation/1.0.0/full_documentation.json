@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-07-18T03:20:49.162Z"
+    "x-generation-date": "2024-07-18T20:42:18.772Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1462,6 +1462,24 @@
                     }
                   ]
                 }
+              },
+              "Test1": {
+                "type": "string"
+              },
+              "Test2": {
+                "type": "string"
+              },
+              "Test3": {
+                "type": "string"
+              },
+              "Test4": {
+                "type": "string"
+              },
+              "Color": {
+                "type": "string"
+              },
+              "Video": {
+                "type": "string"
               },
               "sitemap_exclude": {
                 "type": "boolean"
@@ -2937,6 +2955,24 @@
                                         ]
                                       }
                                     },
+                                    "Test1": {
+                                      "type": "string"
+                                    },
+                                    "Test2": {
+                                      "type": "string"
+                                    },
+                                    "Test3": {
+                                      "type": "string"
+                                    },
+                                    "Test4": {
+                                      "type": "string"
+                                    },
+                                    "Color": {
+                                      "type": "string"
+                                    },
+                                    "Video": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -3079,6 +3115,24 @@
                 }
               ]
             }
+          },
+          "Test1": {
+            "type": "string"
+          },
+          "Test2": {
+            "type": "string"
+          },
+          "Test3": {
+            "type": "string"
+          },
+          "Test4": {
+            "type": "string"
+          },
+          "Color": {
+            "type": "string"
+          },
+          "Video": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -4718,6 +4772,24 @@
                             ]
                           }
                         },
+                        "Test1": {
+                          "type": "string"
+                        },
+                        "Test2": {
+                          "type": "string"
+                        },
+                        "Test3": {
+                          "type": "string"
+                        },
+                        "Test4": {
+                          "type": "string"
+                        },
+                        "Color": {
+                          "type": "string"
+                        },
+                        "Video": {
+                          "type": "string"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -6257,6 +6329,24 @@
                               }
                             ]
                           }
+                        },
+                        "Test1": {
+                          "type": "string"
+                        },
+                        "Test2": {
+                          "type": "string"
+                        },
+                        "Test3": {
+                          "type": "string"
+                        },
+                        "Test4": {
+                          "type": "string"
+                        },
+                        "Color": {
+                          "type": "string"
+                        },
+                        "Video": {
+                          "type": "string"
                         },
                         "createdAt": {
                           "type": "string",
@@ -9559,6 +9649,24 @@
                           ]
                         }
                       },
+                      "Test1": {
+                        "type": "string"
+                      },
+                      "Test2": {
+                        "type": "string"
+                      },
+                      "Test3": {
+                        "type": "string"
+                      },
+                      "Test4": {
+                        "type": "string"
+                      },
+                      "Color": {
+                        "type": "string"
+                      },
+                      "Video": {
+                        "type": "string"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -9737,6 +9845,18 @@
               },
               "summary": {
                 "type": "string"
+              },
+              "CkEditor": {
+                "type": "string"
+              },
+              "Editor2": {
+                "type": "string"
+              },
+              "seo": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedSeoComponent"
+                }
               },
               "sitemap_exclude": {
                 "type": "boolean"
@@ -10447,6 +10567,18 @@
           "summary": {
             "type": "string"
           },
+          "CkEditor": {
+            "type": "string"
+          },
+          "Editor2": {
+            "type": "string"
+          },
+          "seo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedSeoComponent"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -10730,6 +10862,341 @@
             "type": "boolean"
           },
           "tags": {
+            "type": "string"
+          }
+        }
+      },
+      "SharedSeoComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "metaTitle": {
+            "type": "string"
+          },
+          "metaDescription": {
+            "type": "string"
+          },
+          "metaImage": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "alternativeText": {
+                        "type": "string"
+                      },
+                      "caption": {
+                        "type": "string"
+                      },
+                      "width": {
+                        "type": "integer"
+                      },
+                      "height": {
+                        "type": "integer"
+                      },
+                      "formats": {},
+                      "hash": {
+                        "type": "string"
+                      },
+                      "ext": {
+                        "type": "string"
+                      },
+                      "mime": {
+                        "type": "string"
+                      },
+                      "size": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "previewUrl": {
+                        "type": "string"
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "provider_metadata": {},
+                      "related": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "folder": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "folderPath": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "createdBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "updatedBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "sitemap_exclude": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "metaSocial": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "socialNetwork": {
+                  "type": "string",
+                  "enum": [
+                    "Facebook",
+                    "Twitter"
+                  ]
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "attributes": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "alternativeText": {
+                              "type": "string"
+                            },
+                            "caption": {
+                              "type": "string"
+                            },
+                            "width": {
+                              "type": "integer"
+                            },
+                            "height": {
+                              "type": "integer"
+                            },
+                            "formats": {},
+                            "hash": {
+                              "type": "string"
+                            },
+                            "ext": {
+                              "type": "string"
+                            },
+                            "mime": {
+                              "type": "string"
+                            },
+                            "size": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "previewUrl": {
+                              "type": "string"
+                            },
+                            "provider": {
+                              "type": "string"
+                            },
+                            "provider_metadata": {},
+                            "related": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "number"
+                                      },
+                                      "attributes": {
+                                        "type": "object",
+                                        "properties": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "folder": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "number"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "folderPath": {
+                              "type": "string"
+                            },
+                            "createdAt": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "updatedAt": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "createdBy": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "number"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "updatedBy": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "number"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "sitemap_exclude": {
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "keywords": {
+            "type": "string"
+          },
+          "metaRobots": {
+            "type": "string"
+          },
+          "structuredData": {},
+          "metaViewport": {
+            "type": "string"
+          },
+          "canonicalURL": {
             "type": "string"
           }
         }

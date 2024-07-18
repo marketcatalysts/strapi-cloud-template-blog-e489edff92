@@ -53,6 +53,47 @@
         "shared.rich-text",
         "shared.slider"
       ]
+    },
+    "Test1": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "Test2": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "standard"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "Test3": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "Test4": {
+      "type": "customField",
+      "options": {
+        "output": "Markdown",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "Color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "Video": {
+      "type": "customField",
+      "customField": "plugin::oembed.oembed"
     }
   }
 }

@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "@ckeditor/strapi-plugin-ckeditor": "^0.0.13",
     "@strapi-newsletter/strapi": "^0.1.2",
     "@strapi/plugin-cloud": "4.25.4",
+    "@strapi/plugin-color-picker": "^4.25.4",
     "@strapi/plugin-documentation": "4.25.4",
     "@strapi/plugin-email": "4.25.4",
     "@strapi/plugin-graphql": "4.25.4",
@@ -18,8 +20,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "5.3.4",
-    "strapi-plugin-ckeditor5": "^2.1.1-rc.1",
     "strapi-plugin-comments": "^1.0.4",
+    "strapi-plugin-email-designer": "^2.2.1",
+    "strapi-plugin-navigation": "^2.5.2",
+    "strapi-plugin-oembed": "^1.2.1",
     "strapi-plugin-preview": "^0.7.0",
     "strapi-plugin-preview-button": "^2.2.2",
     "strapi-plugin-sitemap": "3.1.1",

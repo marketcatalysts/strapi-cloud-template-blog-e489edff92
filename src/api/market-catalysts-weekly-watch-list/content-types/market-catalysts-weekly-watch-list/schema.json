@@ -4,7 +4,8 @@
   "info": {
     "singularName": "market-catalysts-weekly-watch-list",
     "pluralName": "market-catalysts-weekly-watch-lists",
-    "displayName": "Market Catalysts Weekly Watch List"
+    "displayName": "Market Catalysts Weekly Watch List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,14 +25,15 @@
       "type": "richtext"
     },
     "sp500Chart": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "catalystItems": {
       "displayName": "Catalyst Item",
@@ -44,6 +46,27 @@
     },
     "summary": {
       "type": "richtext"
+    },
+    "CkEditor": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "Editor2": {
+      "type": "customField",
+      "options": {
+        "output": "Markdown",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.seo"
     }
   }
 }
