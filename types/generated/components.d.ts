@@ -115,6 +115,51 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
+export interface MarketCatalystsCatalystItem extends Schema.Component {
+  collectionName: 'components_market_catalysts_catalyst_items';
+  info: {
+    displayName: 'Catalyst Item';
+    icon: 'manyWays';
+  };
+  attributes: {
+    type: Attribute.Enumeration<
+      [
+        'Market Catalysts',
+        'Market Movers',
+        'Earnings',
+        'FDA',
+        'Economic',
+        'Conference',
+        'IPO',
+        'Dividend',
+        'Splits',
+        'Other'
+      ]
+    >;
+    date: Attribute.Date;
+    time: Attribute.Time;
+    companyEventName: Attribute.String;
+    tickerSymbol: Attribute.String;
+    description: Attribute.RichText;
+    potentialImpact: Attribute.String;
+    relatedStockSectors: Attribute.String;
+    URL: Attribute.String;
+    importanceLevel: Attribute.Enumeration<
+      [
+        'Extremely High - Stock Market Mover',
+        'High - Individual Stock Mover',
+        'Medium - Potential Stock Mover',
+        'Low - Small Chance Stock Mover'
+      ]
+    >;
+    chartImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    estimatedValue: Attribute.Decimal;
+    analystsConsensus: Attribute.String;
+    isConfirmed: Attribute.Boolean;
+    tags: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -125,6 +170,7 @@ declare module '@strapi/types' {
       'shared.meta-social': SharedMetaSocial;
       'shared.members': SharedMembers;
       'shared.media': SharedMedia;
+      'market-catalysts.catalyst-item': MarketCatalystsCatalystItem;
     }
   }
 }

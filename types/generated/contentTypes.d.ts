@@ -1324,6 +1324,47 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList
+  extends Schema.CollectionType {
+  collectionName: 'market_catalysts_weekly_watch_lists';
+  info: {
+    singularName: 'market-catalysts-weekly-watch-list';
+    pluralName: 'market-catalysts-weekly-watch-lists';
+    displayName: 'Market Catalysts Weekly Watch List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Publication: Attribute.Date;
+    introduction: Attribute.RichText;
+    marketoverview: Attribute.RichText;
+    sp500Chart: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    catalystItems: Attribute.Component<'market-catalysts.catalyst-item', true>;
+    featuredCatalysts: Attribute.RichText;
+    summary: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
   collectionName: 'privacy_policies';
   info: {
@@ -1452,6 +1493,7 @@ declare module '@strapi/types' {
       'api::data-disclaimer.data-disclaimer': ApiDataDisclaimerDataDisclaimer;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list': ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::team.team': ApiTeamTeam;
       'api::terms-of-use.terms-of-use': ApiTermsOfUseTermsOfUse;

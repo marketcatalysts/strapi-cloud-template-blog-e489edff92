@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "market_catalysts_weekly_watch_lists",
+  "info": {
+    "singularName": "market-catalysts-weekly-watch-list",
+    "pluralName": "market-catalysts-weekly-watch-lists",
+    "displayName": "Market Catalysts Weekly Watch List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Publication": {
+      "type": "date"
+    },
+    "introduction": {
+      "type": "richtext"
+    },
+    "marketoverview": {
+      "type": "richtext"
+    },
+    "sp500Chart": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "catalystItems": {
+      "displayName": "Catalyst Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "market-catalysts.catalyst-item"
+    },
+    "featuredCatalysts": {
+      "type": "richtext"
+    },
+    "summary": {
+      "type": "richtext"
+    }
+  }
+}

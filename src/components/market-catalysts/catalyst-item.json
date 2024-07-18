@@ -1,0 +1,80 @@
+{
+  "collectionName": "components_market_catalysts_catalyst_items",
+  "info": {
+    "displayName": "Catalyst Item",
+    "icon": "manyWays"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Market Catalysts",
+        "Market Movers",
+        "Earnings",
+        "FDA",
+        "Economic",
+        "Conference",
+        "IPO",
+        "Dividend",
+        "Splits",
+        "Other"
+      ]
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "companyEventName": {
+      "type": "string"
+    },
+    "tickerSymbol": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "potentialImpact": {
+      "type": "string"
+    },
+    "relatedStockSectors": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "string"
+    },
+    "importanceLevel": {
+      "type": "enumeration",
+      "enum": [
+        "Extremely High - Stock Market Mover",
+        "High - Individual Stock Mover",
+        "Medium - Potential Stock Mover",
+        "Low - Small Chance Stock Mover"
+      ]
+    },
+    "chartImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "estimatedValue": {
+      "type": "decimal"
+    },
+    "analystsConsensus": {
+      "type": "string"
+    },
+    "isConfirmed": {
+      "type": "boolean"
+    },
+    "tags": {
+      "type": "string"
+    }
+  }
+}
