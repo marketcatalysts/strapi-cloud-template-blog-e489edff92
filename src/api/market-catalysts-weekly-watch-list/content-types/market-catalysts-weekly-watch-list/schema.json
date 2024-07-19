@@ -37,36 +37,6 @@
       },
       "customField": "plugin::ckeditor.CKEditor"
     },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "customField",
-      "customField": "plugin::strapi-advanced-uuid.uuid"
-    },
-    "author": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::author.author"
-    },
     "publicationDate": {
       "pluginOptions": {
         "i18n": {
@@ -101,22 +71,6 @@
       },
       "customField": "plugin::ckeditor.CKEditor"
     },
-    "sp500Chart": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "video": {
       "pluginOptions": {
         "i18n": {
@@ -125,17 +79,6 @@
       },
       "type": "customField",
       "customField": "plugin::oembed.oembed"
-    },
-    "catalystsSections": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "dynamiczone",
-      "components": [
-        "market-catalysts.catalyst-section"
-      ]
     },
     "summary": {
       "pluginOptions": {
@@ -168,6 +111,201 @@
       },
       "type": "uid",
       "targetField": "title"
+    },
+    "coverHTML": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "authorHTML": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "stockChart": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "videoHTML": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "featuredCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "marketCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "marketMovers": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "earningsCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "economicCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "fdaCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "conferenceCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "ipoCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "dividendCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "splitsCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "otherCatalysts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

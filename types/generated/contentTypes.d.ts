@@ -1671,24 +1671,6 @@ export interface ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList
           localized: true;
         };
       }>;
-    cover: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    slug: Attribute.UID &
-      Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    author: Attribute.Relation<
-      'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list',
-      'oneToOne',
-      'api::author.author'
-    >;
     publicationDate: Attribute.DateTime &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1721,22 +1703,8 @@ export interface ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList
           localized: true;
         };
       }>;
-    sp500Chart: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     video: Attribute.Text &
       Attribute.CustomField<'plugin::oembed.oembed'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    catalystsSections: Attribute.DynamicZone<
-      ['market-catalysts.catalyst-section']
-    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1765,6 +1733,201 @@ export interface ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList
       'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list',
       'title'
     > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    coverHTML: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    authorHTML: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    stockChart: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    videoHTML: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    featuredCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    marketCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    marketMovers: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    earningsCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    economicCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    fdaCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    conferenceCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ipoCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    dividendCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    splitsCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    otherCatalysts: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
