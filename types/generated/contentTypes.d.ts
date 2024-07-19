@@ -1646,32 +1646,121 @@ export interface ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Title: Attribute.String;
-    Publication: Attribute.Date;
-    introduction: Attribute.RichText;
-    marketoverview: Attribute.RichText;
-    sp500Chart: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    catalystItems: Attribute.Component<'market-catalysts.catalyst-item', true>;
-    featuredCatalysts: Attribute.RichText;
-    summary: Attribute.RichText;
-    CkEditor: Attribute.RichText &
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor.CKEditor',
         {
           output: 'HTML';
           preset: 'rich';
         }
-      >;
-    Editor2: Attribute.RichText &
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cover: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID &
+      Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    author: Attribute.Relation<
+      'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list',
+      'oneToOne',
+      'api::author.author'
+    >;
+    publicationDate: Attribute.DateTime &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    introduction: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor.CKEditor',
         {
-          output: 'Markdown';
+          output: 'HTML';
           preset: 'rich';
         }
-      >;
-    seo: Attribute.Component<'shared.seo', true>;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    marketOverview: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sp500Chart: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    video: Attribute.Text &
+      Attribute.CustomField<'plugin::oembed.oembed'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    catalystsSections: Attribute.DynamicZone<
+      ['market-catalysts.catalyst-section']
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    summary: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1687,6 +1776,12 @@ export interface ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list',
+      'oneToMany',
+      'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;

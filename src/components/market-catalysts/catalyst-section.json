@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_market_catalysts_catalyst_sections",
+  "info": {
+    "displayName": "Catalyst-Section",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "catalyst_items": {
+      "displayName": "Cataysts-Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "market-catalysts.cataysts-items"
+    }
+  }
+}

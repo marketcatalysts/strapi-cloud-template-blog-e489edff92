@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-07-18T20:42:18.772Z"
+    "x-generation-date": "2024-07-19T00:36:15.300Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9801,6 +9801,91 @@
           }
         }
       },
+      "MarketCatalystsWeeklyWatchListLocalizationRequest": {
+        "required": [
+          "locale"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "cover": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "example": "string or id"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "author": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "example": "string or id"
+          },
+          "publicationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "introduction": {
+            "type": "string"
+          },
+          "marketOverview": {
+            "type": "string"
+          },
+          "sp500Chart": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "example": "string or id"
+          },
+          "video": {
+            "type": "string"
+          },
+          "catalystsSections": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/MarketCatalystsCatalystSectionComponent"
+                }
+              ]
+            }
+          },
+          "summary": {
+            "type": "string"
+          },
+          "seo": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "sitemap_exclude": {
+            "type": "boolean"
+          }
+        }
+      },
       "MarketCatalystsWeeklyWatchListRequest": {
         "type": "object",
         "required": [
@@ -9810,17 +9895,45 @@
           "data": {
             "type": "object",
             "properties": {
-              "Title": {
+              "title": {
                 "type": "string"
               },
-              "Publication": {
+              "description": {
+                "type": "string"
+              },
+              "cover": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "author": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
+              },
+              "publicationDate": {
                 "type": "string",
-                "format": "date"
+                "format": "date-time"
               },
               "introduction": {
                 "type": "string"
               },
-              "marketoverview": {
+              "marketOverview": {
                 "type": "string"
               },
               "sp500Chart": {
@@ -9834,32 +9947,98 @@
                 ],
                 "example": "string or id"
               },
-              "catalystItems": {
+              "video": {
+                "type": "string"
+              },
+              "catalystsSections": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/MarketCatalystsCatalystItemComponent"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/MarketCatalystsCatalystSectionComponent"
+                    }
+                  ]
                 }
-              },
-              "featuredCatalysts": {
-                "type": "string"
               },
               "summary": {
                 "type": "string"
               },
-              "CkEditor": {
-                "type": "string"
-              },
-              "Editor2": {
-                "type": "string"
-              },
               "seo": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/SharedSeoComponent"
-                }
+                "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "locale": {
+                "type": "string"
               },
               "sitemap_exclude": {
                 "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListResponseDataObjectLocalized": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListLocalizationResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListResponseDataObjectLocalized"
+          },
+          "meta": {
+            "type": "object"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListListResponseDataItemLocalized": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListLocalizationListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListListResponseDataItemLocalized"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "pagination": {
+                "type": "object",
+                "properties": {
+                  "page": {
+                    "type": "integer"
+                  },
+                  "pageSize": {
+                    "type": "integer",
+                    "minimum": 25
+                  },
+                  "pageCount": {
+                    "type": "integer",
+                    "maximum": 1
+                  },
+                  "total": {
+                    "type": "integer"
+                  }
+                }
               }
             }
           }
@@ -9914,20 +10093,13 @@
       "MarketCatalystsWeeklyWatchList": {
         "type": "object",
         "properties": {
-          "Title": {
+          "title": {
             "type": "string"
           },
-          "Publication": {
-            "type": "string",
-            "format": "date"
-          },
-          "introduction": {
+          "description": {
             "type": "string"
           },
-          "marketoverview": {
-            "type": "string"
-          },
-          "sp500Chart": {
+          "cover": {
             "type": "object",
             "properties": {
               "data": {
@@ -10555,43 +10727,10 @@
               }
             }
           },
-          "catalystItems": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MarketCatalystsCatalystItemComponent"
-            }
-          },
-          "featuredCatalysts": {
+          "slug": {
             "type": "string"
           },
-          "summary": {
-            "type": "string"
-          },
-          "CkEditor": {
-            "type": "string"
-          },
-          "Editor2": {
-            "type": "string"
-          },
-          "seo": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SharedSeoComponent"
-            }
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "publishedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdBy": {
+          "author": {
             "type": "object",
             "properties": {
               "data": {
@@ -10602,114 +10741,912 @@
                   },
                   "attributes": {
                     "type": "object",
-                    "properties": {}
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "avatar": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "alternativeText": {
+                                    "type": "string"
+                                  },
+                                  "caption": {
+                                    "type": "string"
+                                  },
+                                  "width": {
+                                    "type": "integer"
+                                  },
+                                  "height": {
+                                    "type": "integer"
+                                  },
+                                  "formats": {},
+                                  "hash": {
+                                    "type": "string"
+                                  },
+                                  "ext": {
+                                    "type": "string"
+                                  },
+                                  "mime": {
+                                    "type": "string"
+                                  },
+                                  "size": {
+                                    "type": "number",
+                                    "format": "float"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  },
+                                  "previewUrl": {
+                                    "type": "string"
+                                  },
+                                  "provider": {
+                                    "type": "string"
+                                  },
+                                  "provider_metadata": {},
+                                  "related": {
+                                    "type": "object",
+                                    "properties": {
+                                      "data": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "folder": {
+                                    "type": "object",
+                                    "properties": {
+                                      "data": {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "number"
+                                          },
+                                          "attributes": {
+                                            "type": "object",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "folderPath": {
+                                    "type": "string"
+                                  },
+                                  "createdAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                  },
+                                  "updatedAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                  },
+                                  "createdBy": {
+                                    "type": "object",
+                                    "properties": {
+                                      "data": {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "number"
+                                          },
+                                          "attributes": {
+                                            "type": "object",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "updatedBy": {
+                                    "type": "object",
+                                    "properties": {
+                                      "data": {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "number"
+                                          },
+                                          "attributes": {
+                                            "type": "object",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "sitemap_exclude": {
+                                    "type": "boolean"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "articles": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "type": "string"
+                                    },
+                                    "slug": {
+                                      "type": "string"
+                                    },
+                                    "cover": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {
+                                                "name": {
+                                                  "type": "string"
+                                                },
+                                                "alternativeText": {
+                                                  "type": "string"
+                                                },
+                                                "caption": {
+                                                  "type": "string"
+                                                },
+                                                "width": {
+                                                  "type": "integer"
+                                                },
+                                                "height": {
+                                                  "type": "integer"
+                                                },
+                                                "formats": {},
+                                                "hash": {
+                                                  "type": "string"
+                                                },
+                                                "ext": {
+                                                  "type": "string"
+                                                },
+                                                "mime": {
+                                                  "type": "string"
+                                                },
+                                                "size": {
+                                                  "type": "number",
+                                                  "format": "float"
+                                                },
+                                                "url": {
+                                                  "type": "string"
+                                                },
+                                                "previewUrl": {
+                                                  "type": "string"
+                                                },
+                                                "provider": {
+                                                  "type": "string"
+                                                },
+                                                "provider_metadata": {},
+                                                "related": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "array",
+                                                      "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "folder": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "folderPath": {
+                                                  "type": "string"
+                                                },
+                                                "createdAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "updatedAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "createdBy": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "updatedBy": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "sitemap_exclude": {
+                                                  "type": "boolean"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "author": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "category": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {
+                                                "name": {
+                                                  "type": "string"
+                                                },
+                                                "slug": {
+                                                  "type": "string"
+                                                },
+                                                "articles": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "array",
+                                                      "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "description": {
+                                                  "type": "string"
+                                                },
+                                                "createdAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "updatedAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "createdBy": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "updatedBy": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "sitemap_exclude": {
+                                                  "type": "boolean"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "blocks": {
+                                      "type": "array",
+                                      "items": {
+                                        "anyOf": [
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "file": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "data": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "id": {
+                                                        "type": "number"
+                                                      },
+                                                      "attributes": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "name": {
+                                                            "type": "string"
+                                                          },
+                                                          "alternativeText": {
+                                                            "type": "string"
+                                                          },
+                                                          "caption": {
+                                                            "type": "string"
+                                                          },
+                                                          "width": {
+                                                            "type": "integer"
+                                                          },
+                                                          "height": {
+                                                            "type": "integer"
+                                                          },
+                                                          "formats": {},
+                                                          "hash": {
+                                                            "type": "string"
+                                                          },
+                                                          "ext": {
+                                                            "type": "string"
+                                                          },
+                                                          "mime": {
+                                                            "type": "string"
+                                                          },
+                                                          "size": {
+                                                            "type": "number",
+                                                            "format": "float"
+                                                          },
+                                                          "url": {
+                                                            "type": "string"
+                                                          },
+                                                          "previewUrl": {
+                                                            "type": "string"
+                                                          },
+                                                          "provider": {
+                                                            "type": "string"
+                                                          },
+                                                          "provider_metadata": {},
+                                                          "related": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "data": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "number"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "folder": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "data": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                  "id": {
+                                                                    "type": "number"
+                                                                  },
+                                                                  "attributes": {
+                                                                    "type": "object",
+                                                                    "properties": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "folderPath": {
+                                                            "type": "string"
+                                                          },
+                                                          "createdAt": {
+                                                            "type": "string",
+                                                            "format": "date-time"
+                                                          },
+                                                          "updatedAt": {
+                                                            "type": "string",
+                                                            "format": "date-time"
+                                                          },
+                                                          "createdBy": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "data": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                  "id": {
+                                                                    "type": "number"
+                                                                  },
+                                                                  "attributes": {
+                                                                    "type": "object",
+                                                                    "properties": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "updatedBy": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "data": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                  "id": {
+                                                                    "type": "number"
+                                                                  },
+                                                                  "attributes": {
+                                                                    "type": "object",
+                                                                    "properties": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "sitemap_exclude": {
+                                                            "type": "boolean"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "title": {
+                                                "type": "string"
+                                              },
+                                              "body": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "body": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "files": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "name": {
+                                                              "type": "string"
+                                                            },
+                                                            "alternativeText": {
+                                                              "type": "string"
+                                                            },
+                                                            "caption": {
+                                                              "type": "string"
+                                                            },
+                                                            "width": {
+                                                              "type": "integer"
+                                                            },
+                                                            "height": {
+                                                              "type": "integer"
+                                                            },
+                                                            "formats": {},
+                                                            "hash": {
+                                                              "type": "string"
+                                                            },
+                                                            "ext": {
+                                                              "type": "string"
+                                                            },
+                                                            "mime": {
+                                                              "type": "string"
+                                                            },
+                                                            "size": {
+                                                              "type": "number",
+                                                              "format": "float"
+                                                            },
+                                                            "url": {
+                                                              "type": "string"
+                                                            },
+                                                            "previewUrl": {
+                                                              "type": "string"
+                                                            },
+                                                            "provider": {
+                                                              "type": "string"
+                                                            },
+                                                            "provider_metadata": {},
+                                                            "related": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "number"
+                                                                      },
+                                                                      "attributes": {
+                                                                        "type": "object",
+                                                                        "properties": {}
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "folder": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "number"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "folderPath": {
+                                                              "type": "string"
+                                                            },
+                                                            "createdAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "updatedAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "createdBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "number"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "updatedBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "number"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "sitemap_exclude": {
+                                                              "type": "boolean"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "Test1": {
+                                      "type": "string"
+                                    },
+                                    "Test2": {
+                                      "type": "string"
+                                    },
+                                    "Test3": {
+                                      "type": "string"
+                                    },
+                                    "Test4": {
+                                      "type": "string"
+                                    },
+                                    "Color": {
+                                      "type": "string"
+                                    },
+                                    "Video": {
+                                      "type": "string"
+                                    },
+                                    "createdAt": {
+                                      "type": "string",
+                                      "format": "date-time"
+                                    },
+                                    "updatedAt": {
+                                      "type": "string",
+                                      "format": "date-time"
+                                    },
+                                    "publishedAt": {
+                                      "type": "string",
+                                      "format": "date-time"
+                                    },
+                                    "createdBy": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "updatedBy": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "sitemap_exclude": {
+                                      "type": "boolean"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "createdBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "updatedBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "sitemap_exclude": {
+                        "type": "boolean"
+                      }
+                    }
                   }
                 }
               }
             }
           },
-          "updatedBy": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "attributes": {
-                    "type": "object",
-                    "properties": {}
-                  }
-                }
-              }
-            }
-          },
-          "sitemap_exclude": {
-            "type": "boolean"
-          }
-        }
-      },
-      "MarketCatalystsWeeklyWatchListResponseDataObject": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "attributes": {
-            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
-          }
-        }
-      },
-      "MarketCatalystsWeeklyWatchListResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListResponseDataObject"
-          },
-          "meta": {
-            "type": "object"
-          }
-        }
-      },
-      "MarketCatalystsCatalystItemComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "type": {
+          "publicationDate": {
             "type": "string",
-            "enum": [
-              "Market Catalysts",
-              "Market Movers",
-              "Earnings",
-              "FDA",
-              "Economic",
-              "Conference",
-              "IPO",
-              "Dividend",
-              "Splits",
-              "Other"
-            ]
+            "format": "date-time"
           },
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "time": {
-            "type": "string",
-            "format": "time",
-            "example": "12:54.000"
-          },
-          "companyEventName": {
+          "introduction": {
             "type": "string"
           },
-          "tickerSymbol": {
+          "marketOverview": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
-          },
-          "potentialImpact": {
-            "type": "string"
-          },
-          "relatedStockSectors": {
-            "type": "string"
-          },
-          "URL": {
-            "type": "string"
-          },
-          "importanceLevel": {
-            "type": "string",
-            "enum": [
-              "Extremely High - Stock Market Mover",
-              "High - Individual Stock Mover",
-              "Medium - Potential Stock Mover",
-              "Low - Small Chance Stock Mover"
-            ]
-          },
-          "chartImage": {
+          "sp500Chart": {
             "type": "object",
             "properties": {
               "data": {
@@ -10851,18 +11788,163 @@
               }
             }
           },
-          "estimatedValue": {
-            "type": "number",
-            "format": "float"
-          },
-          "analystsConsensus": {
+          "video": {
             "type": "string"
           },
-          "isConfirmed": {
+          "catalystsSections": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/MarketCatalystsCatalystSectionComponent"
+                }
+              ]
+            }
+          },
+          "summary": {
+            "type": "string"
+          },
+          "seo": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            }
+          },
+          "updatedBy": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            }
+          },
+          "localizations": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListListResponseDataItemLocalized"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
+          },
+          "sitemap_exclude": {
             "type": "boolean"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListResponseDataObject": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
           },
-          "tags": {
+          "attributes": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListResponseDataObject"
+          },
+          "meta": {
+            "type": "object"
+          }
+        }
+      },
+      "MarketCatalystsCataystsItemsComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "marketCatalysts": {
+            "type": "string",
+            "enum": [
+              "featuredCatalysts",
+              "marketCatalysts",
+              "marketMovers",
+              "Earnings",
+              "Economics",
+              "FDA",
+              "Conferences",
+              "IPO",
+              "Dividends",
+              "Splits",
+              "Other"
+            ]
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
             "type": "string"
+          }
+        }
+      },
+      "MarketCatalystsCatalystSectionComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "Title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "catalyst_items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarketCatalystsCataystsItemsComponent"
+            }
           }
         }
       },
@@ -16978,6 +18060,98 @@
           }
         ],
         "operationId": "delete/market-catalysts-weekly-watch-lists/{id}"
+      }
+    },
+    "/market-catalysts-weekly-watch-lists/{id}/localizations": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListLocalizationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Market-catalysts-weekly-watch-list"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "operationId": "post/market-catalysts-weekly-watch-lists/{id}/localizations",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListLocalizationRequest"
+              }
+            }
+          }
+        }
       }
     },
     "/privacy-policy": {

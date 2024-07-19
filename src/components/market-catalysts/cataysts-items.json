@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_market_catalysts_cataysts_items",
+  "info": {
+    "displayName": "Cataysts-Items",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "marketCatalysts": {
+      "type": "enumeration",
+      "enum": [
+        "featuredCatalysts",
+        "marketCatalysts",
+        "marketMovers",
+        "Earnings",
+        "Economics",
+        "FDA",
+        "Conferences",
+        "IPO",
+        "Dividends",
+        "Splits",
+        "Other"
+      ]
+    },
+    "date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}
