@@ -1761,6 +1761,15 @@ export interface ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList
           localized: true;
         };
       }>;
+    slugTitle: Attribute.UID<
+      'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list',
+      'title'
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
