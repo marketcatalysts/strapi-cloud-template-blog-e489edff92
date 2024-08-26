@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-07-19T21:50:53.732Z"
+    "x-generation-date": "2024-08-26T23:06:30.242Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9801,94 +9801,7 @@
           }
         }
       },
-      "MarketCatalystsWeeklyWatchListLocalizationRequest": {
-        "required": [
-          "locale"
-        ],
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "publicationDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "introduction": {
-            "type": "string"
-          },
-          "marketOverview": {
-            "type": "string"
-          },
-          "video": {
-            "type": "string"
-          },
-          "summary": {
-            "type": "string"
-          },
-          "seo": {
-            "$ref": "#/components/schemas/SharedSeoComponent"
-          },
-          "slugTitle": {
-            "type": "string"
-          },
-          "coverHTML": {
-            "type": "string"
-          },
-          "authorHTML": {
-            "type": "string"
-          },
-          "stockChart": {
-            "type": "string"
-          },
-          "videoHTML": {
-            "type": "string"
-          },
-          "featuredCatalysts": {
-            "type": "string"
-          },
-          "marketCatalysts": {
-            "type": "string"
-          },
-          "marketMovers": {
-            "type": "string"
-          },
-          "earningsCatalysts": {
-            "type": "string"
-          },
-          "economicCatalysts": {
-            "type": "string"
-          },
-          "fdaCatalysts": {
-            "type": "string"
-          },
-          "conferenceCatalysts": {
-            "type": "string"
-          },
-          "ipoCatalysts": {
-            "type": "string"
-          },
-          "dividendCatalysts": {
-            "type": "string"
-          },
-          "splitsCatalysts": {
-            "type": "string"
-          },
-          "otherCatalysts": {
-            "type": "string"
-          },
-          "locale": {
-            "type": "string"
-          },
-          "sitemap_exclude": {
-            "type": "boolean"
-          }
-        }
-      },
-      "MarketCatalystsWeeklyWatchListRequest": {
+      "MarketCatalystsFooterRequest": {
         "type": "object",
         "required": [
           "data"
@@ -9897,81 +9810,20 @@
           "data": {
             "type": "object",
             "properties": {
-              "title": {
+              "Title": {
                 "type": "string"
               },
-              "description": {
+              "Subtitle": {
                 "type": "string"
               },
-              "publicationDate": {
-                "type": "string",
-                "format": "date-time"
+              "MarketEventLinks": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MarketCatalystsFooterLinkComponent"
+                }
               },
-              "introduction": {
-                "type": "string"
-              },
-              "marketOverview": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "seo": {
+              "SEO": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
-              },
-              "slugTitle": {
-                "type": "string"
-              },
-              "coverHTML": {
-                "type": "string"
-              },
-              "authorHTML": {
-                "type": "string"
-              },
-              "stockChart": {
-                "type": "string"
-              },
-              "videoHTML": {
-                "type": "string"
-              },
-              "featuredCatalysts": {
-                "type": "string"
-              },
-              "marketCatalysts": {
-                "type": "string"
-              },
-              "marketMovers": {
-                "type": "string"
-              },
-              "earningsCatalysts": {
-                "type": "string"
-              },
-              "economicCatalysts": {
-                "type": "string"
-              },
-              "fdaCatalysts": {
-                "type": "string"
-              },
-              "conferenceCatalysts": {
-                "type": "string"
-              },
-              "ipoCatalysts": {
-                "type": "string"
-              },
-              "dividendCatalysts": {
-                "type": "string"
-              },
-              "splitsCatalysts": {
-                "type": "string"
-              },
-              "otherCatalysts": {
-                "type": "string"
-              },
-              "locale": {
-                "type": "string"
               },
               "sitemap_exclude": {
                 "type": "boolean"
@@ -9980,46 +9832,24 @@
           }
         }
       },
-      "MarketCatalystsWeeklyWatchListResponseDataObjectLocalized": {
+      "MarketCatalystsFooterListResponseDataItem": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
           "attributes": {
-            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
+            "$ref": "#/components/schemas/MarketCatalystsFooter"
           }
         }
       },
-      "MarketCatalystsWeeklyWatchListLocalizationResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListResponseDataObjectLocalized"
-          },
-          "meta": {
-            "type": "object"
-          }
-        }
-      },
-      "MarketCatalystsWeeklyWatchListListResponseDataItemLocalized": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "attributes": {
-            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
-          }
-        }
-      },
-      "MarketCatalystsWeeklyWatchListLocalizationListResponse": {
+      "MarketCatalystsFooterListResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListListResponseDataItemLocalized"
+              "$ref": "#/components/schemas/MarketCatalystsFooterListResponseDataItem"
             }
           },
           "meta": {
@@ -10048,127 +9878,23 @@
           }
         }
       },
-      "MarketCatalystsWeeklyWatchListListResponseDataItem": {
+      "MarketCatalystsFooter": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "number"
+          "Title": {
+            "type": "string"
           },
-          "attributes": {
-            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
-          }
-        }
-      },
-      "MarketCatalystsWeeklyWatchListListResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
+          "Subtitle": {
+            "type": "string"
+          },
+          "MarketEventLinks": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListListResponseDataItem"
+              "$ref": "#/components/schemas/MarketCatalystsFooterLinkComponent"
             }
           },
-          "meta": {
-            "type": "object",
-            "properties": {
-              "pagination": {
-                "type": "object",
-                "properties": {
-                  "page": {
-                    "type": "integer"
-                  },
-                  "pageSize": {
-                    "type": "integer",
-                    "minimum": 25
-                  },
-                  "pageCount": {
-                    "type": "integer",
-                    "maximum": 1
-                  },
-                  "total": {
-                    "type": "integer"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "MarketCatalystsWeeklyWatchList": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "publicationDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "introduction": {
-            "type": "string"
-          },
-          "marketOverview": {
-            "type": "string"
-          },
-          "video": {
-            "type": "string"
-          },
-          "summary": {
-            "type": "string"
-          },
-          "seo": {
+          "SEO": {
             "$ref": "#/components/schemas/SharedSeoComponent"
-          },
-          "slugTitle": {
-            "type": "string"
-          },
-          "coverHTML": {
-            "type": "string"
-          },
-          "authorHTML": {
-            "type": "string"
-          },
-          "stockChart": {
-            "type": "string"
-          },
-          "videoHTML": {
-            "type": "string"
-          },
-          "featuredCatalysts": {
-            "type": "string"
-          },
-          "marketCatalysts": {
-            "type": "string"
-          },
-          "marketMovers": {
-            "type": "string"
-          },
-          "earningsCatalysts": {
-            "type": "string"
-          },
-          "economicCatalysts": {
-            "type": "string"
-          },
-          "fdaCatalysts": {
-            "type": "string"
-          },
-          "conferenceCatalysts": {
-            "type": "string"
-          },
-          "ipoCatalysts": {
-            "type": "string"
-          },
-          "dividendCatalysts": {
-            "type": "string"
-          },
-          "splitsCatalysts": {
-            "type": "string"
-          },
-          "otherCatalysts": {
-            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -10216,44 +9942,44 @@
               }
             }
           },
-          "localizations": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListListResponseDataItemLocalized"
-                }
-              }
-            }
-          },
-          "locale": {
-            "type": "string"
-          },
           "sitemap_exclude": {
             "type": "boolean"
           }
         }
       },
-      "MarketCatalystsWeeklyWatchListResponseDataObject": {
+      "MarketCatalystsFooterResponseDataObject": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
           "attributes": {
-            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
+            "$ref": "#/components/schemas/MarketCatalystsFooter"
           }
         }
       },
-      "MarketCatalystsWeeklyWatchListResponse": {
+      "MarketCatalystsFooterResponse": {
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListResponseDataObject"
+            "$ref": "#/components/schemas/MarketCatalystsFooterResponseDataObject"
           },
           "meta": {
             "type": "object"
+          }
+        }
+      },
+      "MarketCatalystsFooterLinkComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "EventName": {
+            "type": "string"
+          },
+          "Tickers": {
+            "type": "string"
           }
         }
       },
@@ -11075,6 +10801,462 @@
           },
           "canonicalURL": {
             "type": "string"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListLocalizationRequest": {
+        "required": [
+          "locale"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "publicationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "introduction": {
+            "type": "string"
+          },
+          "marketOverview": {
+            "type": "string"
+          },
+          "video": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "seo": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
+          },
+          "slugTitle": {
+            "type": "string"
+          },
+          "coverHTML": {
+            "type": "string"
+          },
+          "authorHTML": {
+            "type": "string"
+          },
+          "stockChart": {
+            "type": "string"
+          },
+          "videoHTML": {
+            "type": "string"
+          },
+          "featuredCatalysts": {
+            "type": "string"
+          },
+          "marketCatalysts": {
+            "type": "string"
+          },
+          "marketMovers": {
+            "type": "string"
+          },
+          "earningsCatalysts": {
+            "type": "string"
+          },
+          "economicCatalysts": {
+            "type": "string"
+          },
+          "fdaCatalysts": {
+            "type": "string"
+          },
+          "conferenceCatalysts": {
+            "type": "string"
+          },
+          "ipoCatalysts": {
+            "type": "string"
+          },
+          "dividendCatalysts": {
+            "type": "string"
+          },
+          "splitsCatalysts": {
+            "type": "string"
+          },
+          "otherCatalysts": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "sitemap_exclude": {
+            "type": "boolean"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListRequest": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "publicationDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "introduction": {
+                "type": "string"
+              },
+              "marketOverview": {
+                "type": "string"
+              },
+              "video": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "seo": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "slugTitle": {
+                "type": "string"
+              },
+              "coverHTML": {
+                "type": "string"
+              },
+              "authorHTML": {
+                "type": "string"
+              },
+              "stockChart": {
+                "type": "string"
+              },
+              "videoHTML": {
+                "type": "string"
+              },
+              "featuredCatalysts": {
+                "type": "string"
+              },
+              "marketCatalysts": {
+                "type": "string"
+              },
+              "marketMovers": {
+                "type": "string"
+              },
+              "earningsCatalysts": {
+                "type": "string"
+              },
+              "economicCatalysts": {
+                "type": "string"
+              },
+              "fdaCatalysts": {
+                "type": "string"
+              },
+              "conferenceCatalysts": {
+                "type": "string"
+              },
+              "ipoCatalysts": {
+                "type": "string"
+              },
+              "dividendCatalysts": {
+                "type": "string"
+              },
+              "splitsCatalysts": {
+                "type": "string"
+              },
+              "otherCatalysts": {
+                "type": "string"
+              },
+              "locale": {
+                "type": "string"
+              },
+              "sitemap_exclude": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListResponseDataObjectLocalized": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListLocalizationResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListResponseDataObjectLocalized"
+          },
+          "meta": {
+            "type": "object"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListListResponseDataItemLocalized": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListLocalizationListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListListResponseDataItemLocalized"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "pagination": {
+                "type": "object",
+                "properties": {
+                  "page": {
+                    "type": "integer"
+                  },
+                  "pageSize": {
+                    "type": "integer",
+                    "minimum": 25
+                  },
+                  "pageCount": {
+                    "type": "integer",
+                    "maximum": 1
+                  },
+                  "total": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListListResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListListResponseDataItem"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "pagination": {
+                "type": "object",
+                "properties": {
+                  "page": {
+                    "type": "integer"
+                  },
+                  "pageSize": {
+                    "type": "integer",
+                    "minimum": 25
+                  },
+                  "pageCount": {
+                    "type": "integer",
+                    "maximum": 1
+                  },
+                  "total": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchList": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "publicationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "introduction": {
+            "type": "string"
+          },
+          "marketOverview": {
+            "type": "string"
+          },
+          "video": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "seo": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
+          },
+          "slugTitle": {
+            "type": "string"
+          },
+          "coverHTML": {
+            "type": "string"
+          },
+          "authorHTML": {
+            "type": "string"
+          },
+          "stockChart": {
+            "type": "string"
+          },
+          "videoHTML": {
+            "type": "string"
+          },
+          "featuredCatalysts": {
+            "type": "string"
+          },
+          "marketCatalysts": {
+            "type": "string"
+          },
+          "marketMovers": {
+            "type": "string"
+          },
+          "earningsCatalysts": {
+            "type": "string"
+          },
+          "economicCatalysts": {
+            "type": "string"
+          },
+          "fdaCatalysts": {
+            "type": "string"
+          },
+          "conferenceCatalysts": {
+            "type": "string"
+          },
+          "ipoCatalysts": {
+            "type": "string"
+          },
+          "dividendCatalysts": {
+            "type": "string"
+          },
+          "splitsCatalysts": {
+            "type": "string"
+          },
+          "otherCatalysts": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            }
+          },
+          "updatedBy": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            }
+          },
+          "localizations": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListListResponseDataItemLocalized"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
+          },
+          "sitemap_exclude": {
+            "type": "boolean"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListResponseDataObject": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchList"
+          }
+        }
+      },
+      "MarketCatalystsWeeklyWatchListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/MarketCatalystsWeeklyWatchListResponseDataObject"
+          },
+          "meta": {
+            "type": "object"
           }
         }
       },
@@ -16349,6 +16531,512 @@
         ],
         "parameters": [],
         "operationId": "delete/home-page"
+      }
+    },
+    "/market-catalysts-footers": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketCatalystsFooterListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Market-catalysts-footer"
+        ],
+        "parameters": [
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort by attributes ascending (asc) or descending (desc)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pagination[withCount]",
+            "in": "query",
+            "description": "Return page/pageSize (default: true)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "pagination[page]",
+            "in": "query",
+            "description": "Page number (default: 0)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pagination[pageSize]",
+            "in": "query",
+            "description": "Page size (default: 25)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pagination[start]",
+            "in": "query",
+            "description": "Offset value (default: 0)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pagination[limit]",
+            "in": "query",
+            "description": "Number of entities to return (default: 25)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return (ex: title,author)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "populate",
+            "in": "query",
+            "description": "Relations to return",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filters",
+            "in": "query",
+            "description": "Filters to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "get/market-catalysts-footers"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketCatalystsFooterResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Market-catalysts-footer"
+        ],
+        "parameters": [],
+        "operationId": "post/market-catalysts-footers",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MarketCatalystsFooterRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/market-catalysts-footers/{id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketCatalystsFooterResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Market-catalysts-footer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "operationId": "get/market-catalysts-footers/{id}"
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketCatalystsFooterResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Market-catalysts-footer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "operationId": "put/market-catalysts-footers/{id}",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MarketCatalystsFooterRequest"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Market-catalysts-footer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "operationId": "delete/market-catalysts-footers/{id}"
       }
     },
     "/market-catalysts-weekly-watch-lists": {

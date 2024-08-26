@@ -115,6 +115,17 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
+export interface MarketCatalystsFooterLink extends Schema.Component {
+  collectionName: 'components_market_catalysts_footer_links';
+  info: {
+    displayName: 'FooterLink';
+  };
+  attributes: {
+    EventName: Attribute.String;
+    Tickers: Attribute.String;
+  };
+}
+
 export interface MarketCatalystsCataystsItems extends Schema.Component {
   collectionName: 'components_market_catalysts_cataysts_items';
   info: {
@@ -227,6 +238,7 @@ declare module '@strapi/types' {
       'shared.meta-social': SharedMetaSocial;
       'shared.members': SharedMembers;
       'shared.media': SharedMedia;
+      'market-catalysts.footer-link': MarketCatalystsFooterLink;
       'market-catalysts.cataysts-items': MarketCatalystsCataystsItems;
       'market-catalysts.catalyst-section': MarketCatalystsCatalystSection;
       'market-catalysts.catalyst-item': MarketCatalystsCatalystItem;

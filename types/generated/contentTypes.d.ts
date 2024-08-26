@@ -1359,6 +1359,44 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiMarketCatalystsFooterMarketCatalystsFooter
+  extends Schema.CollectionType {
+  collectionName: 'market_catalysts_footers';
+  info: {
+    singularName: 'market-catalysts-footer';
+    pluralName: 'market-catalysts-footers';
+    displayName: 'MarketCatalystsFooter';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    MarketEventLinks: Attribute.Component<'market-catalysts.footer-link', true>;
+    SEO: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::market-catalysts-footer.market-catalysts-footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::market-catalysts-footer.market-catalysts-footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList
   extends Schema.CollectionType {
   collectionName: 'market_catalysts_weekly_watch_lists';
@@ -1813,6 +1851,7 @@ declare module '@strapi/types' {
       'api::data-disclaimer.data-disclaimer': ApiDataDisclaimerDataDisclaimer;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::market-catalysts-footer.market-catalysts-footer': ApiMarketCatalystsFooterMarketCatalystsFooter;
       'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list': ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::team.team': ApiTeamTeam;

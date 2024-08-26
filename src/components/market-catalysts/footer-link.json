@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_market_catalysts_footer_links",
+  "info": {
+    "displayName": "FooterLink"
+  },
+  "options": {},
+  "attributes": {
+    "EventName": {
+      "type": "string"
+    },
+    "Tickers": {
+      "type": "string"
+    }
+  }
+}
