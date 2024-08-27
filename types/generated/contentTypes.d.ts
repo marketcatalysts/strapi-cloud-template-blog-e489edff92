@@ -1108,6 +1108,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     Color: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
     Video: Attribute.Text & Attribute.CustomField<'plugin::oembed.oembed'>;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1159,6 +1160,42 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::author.author',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ApiCatalystsFooterCatalystsFooter extends Schema.SingleType {
+  collectionName: 'catalysts_footers';
+  info: {
+    singularName: 'catalysts-footer';
+    pluralName: 'catalysts-footers';
+    displayName: 'CatalystsFooter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    MarketEventLinks: Attribute.Component<'market-catalysts.footer-link', true>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::catalysts-footer.catalysts-footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::catalysts-footer.catalysts-footer',
       'oneToOne',
       'admin::user'
     > &
@@ -1758,6 +1795,126 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
   };
 }
 
+export interface ApiResourceResource extends Schema.CollectionType {
+  collectionName: 'resources';
+  info: {
+    singularName: 'resource';
+    pluralName: 'resources';
+    displayName: 'Resource';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    Media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resource.resource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resource.resource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ApiSimplifiedResourceSimplifiedResource
+  extends Schema.CollectionType {
+  collectionName: 'simplified_resources';
+  info: {
+    singularName: 'simplified-resource';
+    pluralName: 'simplified-resources';
+    displayName: 'SimplifiedResource';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::simplified-resource.simplified-resource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::simplified-resource.simplified-resource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ApiStockWatchListStockWatchList extends Schema.CollectionType {
+  collectionName: 'stock_watch_lists';
+  info: {
+    singularName: 'stock-watch-list';
+    pluralName: 'stock-watch-lists';
+    displayName: 'StockWatchList';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Stock: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::stock-watch-list.stock-watch-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::stock-watch-list.stock-watch-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiTeamTeam extends Schema.SingleType {
   collectionName: 'teams';
   info: {
@@ -1846,6 +2003,7 @@ declare module '@strapi/types' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::catalysts-footer.catalysts-footer': ApiCatalystsFooterCatalystsFooter;
       'api::category.category': ApiCategoryCategory;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::data-disclaimer.data-disclaimer': ApiDataDisclaimerDataDisclaimer;
@@ -1854,6 +2012,9 @@ declare module '@strapi/types' {
       'api::market-catalysts-footer.market-catalysts-footer': ApiMarketCatalystsFooterMarketCatalystsFooter;
       'api::market-catalysts-weekly-watch-list.market-catalysts-weekly-watch-list': ApiMarketCatalystsWeeklyWatchListMarketCatalystsWeeklyWatchList;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::resource.resource': ApiResourceResource;
+      'api::simplified-resource.simplified-resource': ApiSimplifiedResourceSimplifiedResource;
+      'api::stock-watch-list.stock-watch-list': ApiStockWatchListStockWatchList;
       'api::team.team': ApiTeamTeam;
       'api::terms-of-use.terms-of-use': ApiTermsOfUseTermsOfUse;
     }

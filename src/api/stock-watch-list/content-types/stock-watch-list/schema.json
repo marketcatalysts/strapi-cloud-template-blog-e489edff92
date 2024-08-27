@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stock_watch_lists",
+  "info": {
+    "singularName": "stock-watch-list",
+    "pluralName": "stock-watch-lists",
+    "displayName": "StockWatchList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Stock": {
+      "type": "string"
+    }
+  }
+}

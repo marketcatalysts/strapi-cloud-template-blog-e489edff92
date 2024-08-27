@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "catalysts_footers",
+  "info": {
+    "singularName": "catalysts-footer",
+    "pluralName": "catalysts-footers",
+    "displayName": "CatalystsFooter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "MarketEventLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "market-catalysts.footer-link"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

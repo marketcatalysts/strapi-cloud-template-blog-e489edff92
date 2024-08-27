@@ -94,6 +94,11 @@
     "Video": {
       "type": "customField",
       "customField": "plugin::oembed.oembed"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }
